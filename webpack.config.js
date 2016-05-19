@@ -1,7 +1,23 @@
 module.exports = {
-  entry: './client/src/app.js',
+  entry: [
+    './src/index.js'
+  ],
   output: {
-    filename: 'bundle.js',
-    path: __dirname + '/dist'
+    path: __dirname,
+    publicPath: '/',
+    filename: 'bundle.js'
+  },
+  module: {
+    loaders: [{
+      exclude: /node_modules/,
+      loader: 'babel'
+    }]
+  },
+  resolve: {
+    extensions: ['', '.js', '.jsx']
+  },
+  devServer: {
+    historyApiFallback: true,
+    contentBase: './'
   }
-}
+};
