@@ -12,6 +12,7 @@ class App extends Component {
       }
     };
   }
+  
   //obj will come in form of this.state.searchOptions
   setSearch(obj) {
     this.setState({ searchOptions: obj })
