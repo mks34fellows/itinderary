@@ -1,18 +1,27 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import SearchBar from './components/search_bar'
+import Options from './components/options';
 
 class App extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+      searchOptions: {
+        location: ''
+      }
+    };
+  }
+  //obj will come in form of this.state.searchOptions
+  setSearch(obj) {
+    this.setState({ searchOptions: obj })
   }
 
   render() {
     return (
       <div>
-        <SearchBar />
+        <Options setSearch={ obj => this.setSearch(obj) } />
+        Location: { this.state.searchOptions.location }
       </div>
     )
   }

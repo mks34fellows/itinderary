@@ -63,9 +63,9 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _search_bar = __webpack_require__(160);
+	var _options = __webpack_require__(160);
 
-	var _search_bar2 = _interopRequireDefault(_search_bar);
+	var _options2 = _interopRequireDefault(_options);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -83,17 +83,34 @@
 
 	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(App).call(this, props));
 
-	    _this.state = {};
+	    _this.state = {
+	      searchOptions: {
+	        location: ''
+	      }
+	    };
 	    return _this;
 	  }
+	  //obj will come in form of this.state.searchOptions
+
 
 	  _createClass(App, [{
+	    key: 'setSearch',
+	    value: function setSearch(obj) {
+	      this.setState({ searchOptions: obj });
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
+	      var _this2 = this;
+
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        _react2.default.createElement(_search_bar2.default, null)
+	        _react2.default.createElement(_options2.default, { setSearch: function setSearch(obj) {
+	            return _this2.setSearch(obj);
+	          } }),
+	        'Location: ',
+	        this.state.searchOptions.location
 	      );
 	    }
 	  }]);
@@ -19737,19 +19754,21 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var SearchBar = function (_Component) {
-	  _inherits(SearchBar, _Component);
+	var Options = function (_Component) {
+	  _inherits(Options, _Component);
 
-	  function SearchBar(props) {
-	    _classCallCheck(this, SearchBar);
+	  function Options(props) {
+	    _classCallCheck(this, Options);
 
-	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(SearchBar).call(this, props));
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Options).call(this, props));
 
-	    _this.state = { term: '' };
+	    _this.state = {
+	      location: ''
+	    };
 	    return _this;
 	  }
 
-	  _createClass(SearchBar, [{
+	  _createClass(Options, [{
 	    key: 'render',
 	    value: function render() {
 	      var _this2 = this;
@@ -19757,21 +19776,24 @@
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        _react2.default.createElement('input', {
-	          value: this.state.term,
-	          onChange: function onChange(event) {
-	            return _this2.setState({ term: event.target.value });
-	          } }),
-	        'Value of the input: ',
-	        this.state.term
+	        _react2.default.createElement('input', { type: 'text', onChange: function onChange(event) {
+	            return _this2.props.setSearch({ location: event.target.value });
+	          }, placeholder: 'Location' }),
+	        _react2.default.createElement(
+	          'button',
+	          { type: 'button' },
+	          'Submit'
+	        )
 	      );
 	    }
 	  }]);
 
-	  return SearchBar;
+	  return Options;
 	}(_react.Component);
 
-	exports.default = SearchBar;
+	;
+
+	exports.default = Options;
 
 /***/ }
 /******/ ]);
