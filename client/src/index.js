@@ -1,31 +1,11 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import Options from './components/options';
+import Form from './components/form';
+import { Router, browserHistory } from 'react-router';
+import routes from './routes';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
 
-    this.state = {
-      searchOptions: {
-        location: ''
-      }
-    };
-  }
-  
-  //obj will come in form of this.state.searchOptions
-  setSearch(obj) {
-    this.setState({ searchOptions: obj })
-  }
-
-  render() {
-    return (
-      <div>
-        <Options setSearch={ obj => this.setSearch(obj) } />
-        Location: { this.state.searchOptions.location }
-      </div>
-    )
-  }
-};
-
-ReactDOM.render(<App />, document.querySelector('.container'));
+ReactDOM.render(
+ <Router history={browserHistory} routes={routes} />
+  , document.querySelector('.container')
+);
