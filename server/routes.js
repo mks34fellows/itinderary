@@ -6,4 +6,9 @@ module.exports = function (app) {
     res.sendFile(path.resolve(__dirname + '/../index.html'));
   });
 
+  app.post('/test', (req, res) => {
+    console.log('hello');
+    res.send('hello');
+  });
+
 };
