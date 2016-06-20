@@ -7,6 +7,11 @@ module.exports = {
     filename: 'bundle.js'
   },
   module: {
+    preLoaders: [{
+      test: /\.js$/,
+      exclude: /node_modules/,
+      loader: 'eslint-loader'
+    }],
     loaders: [{
       exclude: /node_modules/,
       loader: 'babel'
