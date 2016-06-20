@@ -1,15 +1,15 @@
 import React, { Component, PropTypes } from 'react';
 import { reduxForm } from 'redux-form';
 import { submitInput } from '../actions/index';
+import axios from 'axios';
 
 class UserInput extends Component {
-  static contextTypes = {
+  static contextTypes = { // eslint-disable-line
     router: PropTypes.object
   };
 
   onSubmit(props) {
-    this.props.submitInput(props)
-
+    this.props.submitInput(props);
     this.context.router.push('/options');
   }
 
