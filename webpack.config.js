@@ -1,7 +1,27 @@
 module.exports = {
-  entry: './client/src/app.js',
+  entry: [
+    './client/src/index.js'
+  ],
   output: {
-    filename: 'bundle.js',
-    path: __dirname + '/dist'
+    path: __dirname + '/client/dist',
+    filename: 'bundle.js'
+  },
+  module: {
+    preLoaders: [{
+      test: /\.js$/,
+      exclude: /node_modules/,
+      loader: 'eslint-loader'
+    }],
+    loaders: [{
+      exclude: /node_modules/,
+      loader: 'babel'
+    }]
+  },
+  resolve: {
+    extensions: ['', '.js', '.jsx']
+  },
+  devServer: {
+    historyApiFallback: true,
+    contentBase: './'
   }
-}
+};
