@@ -21,7 +21,7 @@ class UserInput extends Component {
     return(
       <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
         <div>
-          <label>Location</label>
+          <label style={{color: 'blue'}}>Location</label>
           <input type="text" {...location} />
         </div>
 
