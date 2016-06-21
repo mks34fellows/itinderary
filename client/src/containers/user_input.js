@@ -4,7 +4,8 @@ import { submitInput } from '../actions/index';
 import axios from 'axios';
 
 class UserInput extends Component {
-  static contextTypes = { // eslint-disable-line
+
+  static contextTypes = {
     router: PropTypes.object
   };
 
