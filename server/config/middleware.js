@@ -9,7 +9,6 @@ const webpackHotMiddleware = require('webpack-hot-middleware');
 
 require('dotenv').config();
 
-
 module.exports = function (app, express) {
   app.use(webpackDevMiddleware(compiler, {
     quiet: true,
@@ -23,6 +22,6 @@ module.exports = function (app, express) {
   app.use(webpackHotMiddleware(compiler));
 
   app.use(bodyParser.json());
-  
+
   app.use(express.static(path.join(__dirname, '../../client/dist')));
 };
