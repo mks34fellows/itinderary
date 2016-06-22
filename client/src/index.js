@@ -1,17 +1,34 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
 import { Router, browserHistory } from 'react-router';
 import routes from './routes';
-import promise from 'redux-promise';
-
 import reducers from './reducers';
 
-const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
+import { AppContainer } from 'react-hot-loader';
+
+import store from './store';
+
+const createStoreWithMiddleware = store();
+
 
 ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
-    <Router history={browserHistory} routes={routes} />
-  </Provider>
+  <AppContainer>
+    <Provider store={createStoreWithMiddleware(reducers)}>
+      <Router history={browserHistory} routes={routes} />
+    </Provider>
+  </AppContainer>
   , document.querySelector('.container'));
+
+if(module.hot) {
+  module.hot.accept('./routes.js', () => {
+    const nextRoutes = require('./routes.js');
+    ReactDOM.render(
+      <AppContainer>
+        <Provider store={createStoreWithMiddleware(reducers)}>
+          <Router history={browserHistory} routes={nextRoutes} />
+        </Provider>
+      </AppContainer>
+      , document.querySelector('.container'));
+  });
+}
