@@ -5,7 +5,7 @@ class Options extends Component {
   render() {
     return (
       <div>
-        <div>{this.props.options.location}</div>
+        <div style={{color:'green'}}>{this.props.options.location}</div>
         <div>{this.props.options.budget}</div>
         <div>{this.props.options.startTime}</div>
         <div>{this.props.options.endTime}</div>

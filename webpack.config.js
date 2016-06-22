@@ -1,7 +1,11 @@
 const webpack = require('webpack'); 
 
 module.exports = {
-  entry: './client/src/index.js',
+  entry: [
+    'webpack-hot-middleware/client?path=http://localhost:8000/__webpack_hmr',
+    'react-hot-loader/patch',
+    './client/src/index.js'
+  ],
   output: {
     path: __dirname + '/client/dist',
     filename: 'bundle.js'
@@ -25,6 +29,7 @@ module.exports = {
   resolve: {
     extensions: ['', '.js', '.jsx']
   },
+  reload: true,
   devServer: {
     hot: true,
     historyApiFallback: true,
