@@ -5,4 +5,4 @@ export function submitInput(input) {
     type: INPUT_SUBMITTED,
     payload: input
   }
-}
+};

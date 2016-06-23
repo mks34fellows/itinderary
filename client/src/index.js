@@ -16,7 +16,8 @@ ReactDOM.render(
       <Router history={browserHistory} routes={routes} />
     </Provider>
   </AppContainer>
-  , document.querySelector('.container'));
+  , document.querySelector('.container')
+);
 
 if(module.hot) {
   module.hot.accept('./routes.js', () => {
@@ -27,6 +28,7 @@ if(module.hot) {
           <Router history={browserHistory} routes={nextRoutes} />
         </Provider>
       </AppContainer>
-      , document.querySelector('.container'));
+      , document.querySelector('.container')
+    );
   });
 }
