@@ -25,7 +25,7 @@ class UserInput extends Component {
         </div>
 
         <div>
-          <label style={{color: 'green'}}>Budget</label>
+          <label>Budget</label>
           <select {...budget}>
             <option value="$">$</option>
             <option value="$$">$$</option>

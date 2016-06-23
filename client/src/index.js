@@ -3,18 +3,16 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { Router, browserHistory } from 'react-router';
 import routes from './routes';
-import reducers from './reducers';
 
 import { AppContainer } from 'react-hot-loader';
 
-import store from './store';
+import configureStore from './store';
 
-const createStoreWithMiddleware = store();
-
+const store = configureStore({});
 
 ReactDOM.render(
   <AppContainer>
-    <Provider store={createStoreWithMiddleware(reducers)}>
+    <Provider store={store}>
       <Router history={browserHistory} routes={routes} />
     </Provider>
   </AppContainer>
@@ -25,7 +23,7 @@ if(module.hot) {
     const nextRoutes = require('./routes.js');
     ReactDOM.render(
       <AppContainer>
-        <Provider store={createStoreWithMiddleware(reducers)}>
+        <Provider store={store}>
           <Router history={browserHistory} routes={nextRoutes} />
         </Provider>
       </AppContainer>
