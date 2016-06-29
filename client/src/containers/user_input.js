@@ -5,6 +5,7 @@ import axios from 'axios';
 
 class UserInput extends Component {
 
+
   static contextTypes = {
     router: PropTypes.object
   };
@@ -15,7 +16,7 @@ class UserInput extends Component {
   }
 
   render() {
-    const { fields: { location, budget, startTime, endTime }, handleSubmit } = this.props;
+    const { fields: { location, timeOfDay, hungry }, handleSubmit } = this.props;
 
     return(
       <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
@@ -25,21 +26,17 @@ class UserInput extends Component {
         </div>
 
         <div>
-          <label>Budget</label>
-          <select {...budget}>
-            <option value="$">$</option>
-            <option value="$$">$$</option>
+          <label>Time</label>
+          <select value="morning" {...timeOfDay}>
+            <option defaultValue="morning">Morning</option>
+            <option value="afternoon">Afternoon</option>
+            <option value="evening">Evening</option>
           </select>
         </div>
 
         <div>
-          <label>Start Time</label>
-          <input type="time" {...startTime} />
-        </div>
-
-        <div>
-          <label>End Time</label>
-          <input type="time" {...endTime} />
+          <label>Hungry?</label>
+          <input type="checkbox" name="hungry" value={true} {...hungry} />
         </div>
 
         <button type="submit">Submit</button>
@@ -50,5 +47,5 @@ class UserInput extends Component {
 
 export default reduxForm({
   form: 'UserInput',
-  fields: ['location', 'budget', 'startTime', 'endTime']
+  fields: ['location', 'timeOfDay', 'hungry']
 }, null, { submitInput })(UserInput);
