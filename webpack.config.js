@@ -10,6 +10,11 @@ module.exports = {
     path: __dirname + '/client/dist',
     filename: 'bundle.js'
   },
+  externals: {
+    'cheerio': 'window',
+    'react/lib/ExecutionEnvironment': true,
+    'react/lib/ReactContext': true,
+  },
   module: {
     preLoaders: [{
       test: /\.js$/,
