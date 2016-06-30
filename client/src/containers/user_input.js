@@ -24,7 +24,6 @@ class UserInput extends Component {
           <label>Location</label>
           <input type="text" {...location} />
         </div>
-
         <div>
           <label>Time</label>
           <select value="morning" {...timeOfDay}>
