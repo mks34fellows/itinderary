@@ -6,6 +6,7 @@ import axios from 'axios';
 class UserInput extends Component {
 
 
+
   static contextTypes = {
     router: PropTypes.object
   };
@@ -16,27 +17,18 @@ class UserInput extends Component {
   }
 
   render() {
-    const { fields: { location, timeOfDay, hungry }, handleSubmit } = this.props;
+    const { fields: {feeling}, handleSubmit, onChange } = this.props;
 
     return(
       <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
-        <div>
-          <label>Location</label>
-          <input type="text" {...location} />
-        </div>
-        <div>
-          <label>Time</label>
-          <select value="morning" {...timeOfDay}>
-            <option defaultValue="morning">Morning</option>
-            <option value="afternoon">Afternoon</option>
-            <option value="evening">Evening</option>
-          </select>
-        </div>
-
-        <div>
-          <label>Hungry?</label>
-          <input type="checkbox" name="hungry" value={true} {...hungry} />
-        </div>
+      
+          <input type="radio" name='feeling' value='adventurous' onChange={feeling.onChange} checked={feeling.value === 'adventurous'} /> Adventurous <br>
+          <input type="radio" name='feeling' value='classy'  onChange={feeling.onChange} checked={feeling.value === 'classy'} /> Classy <br>
+          <input type="radio" name='feeling' value='competitive' onChange={feeling.onChange} checked={feeling.value === 'competitive'} /> Competitive
+          <input type="radio" name='feeling' value='creative' onChange={feeling.onChange} checked={feeling.value === 'creative'}/> Creative
+          <input type="radio" name='feeling' value='lazy' onChange={feeling.onChange} checked={feeling.value === 'lazy'} /> Lazy
+          <input type="radio" name='feeling' value='ratchet' onChange={feeling.onChange} checked={feeling.value === 'ratchet'} /> Ratchet
+       
 
         <button type="submit">Submit</button>
       </form>
@@ -46,5 +38,5 @@ class UserInput extends Component {
 
 export default reduxForm({
   form: 'UserInput',
-  fields: ['location', 'timeOfDay', 'hungry']
+  fields: ['feeling']
 }, null, { submitInput })(UserInput);
