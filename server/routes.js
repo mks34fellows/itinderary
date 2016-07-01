@@ -3,7 +3,7 @@ const yelpSearch = require('./api/yelp');
 
 module.exports = function (app) {
   app.post('/yelp', (req, res) => {
-    console.log('this is the req.body', req.body.feeling);
+    console.log('this is the req.body', req.body);
      var term = req.body.feeling;
     
     yelpSearch('San Francisco', term).then((data) => {

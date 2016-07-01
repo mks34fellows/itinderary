@@ -4,22 +4,39 @@ import { submitInput } from '../actions/index';
 import axios from 'axios';
 
 class UserInput extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { latLong: '', isClicked: false, props: null };
+    this.onSubmit = this.onSubmit.bind(this);
+  }
 
-
+  componentWillMount() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition( (position) => {
+        this.setState({latLong: position});
+        if(this.state.isClicked && this.state.props) {
+          this.props.submitInput(this.state.props, this.state.latLong);
+          this.context.router.push('/options');
+        }
+      });
+    }
+  }
 
   static contextTypes = {
     router: PropTypes.object
   };
 
   onSubmit(props) {
-    this.props.submitInput(props);
-    this.context.router.push('/options');
+    this.setState({ isClicked: true, props: props });
+    if(this.state.latLong !== '') {
+      this.props.submitInput(this.state.props, this.state.latLong);
+      this.context.router.push('/options');
+    }
   }
 
   render() {
     const { fields: {feeling}, handleSubmit, onChange } = this.props;
 
-    console.log('this is feelings validation',feeling)
 
     return(
       <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
