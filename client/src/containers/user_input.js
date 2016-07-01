@@ -37,7 +37,6 @@ class UserInput extends Component {
   render() {
     const { fields: {feeling}, handleSubmit, onChange } = this.props;
 
-
     return(
       <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
         <div>
@@ -45,8 +44,11 @@ class UserInput extends Component {
           <input type="radio" name='feeling' value='classy'  onChange={feeling.onChange} checked={feeling.value === 'classy'} /> Classy
           <input type="radio" name='feeling' value='competitive' onChange={feeling.onChange} checked={feeling.value === 'competitive'} /> Competitive
           <input type="radio" name='feeling' value='creative' onChange={feeling.onChange} checked={feeling.value === 'creative'}/> Creative
+          <input type="radio" name='feeling' value='frugal' onChange={feeling.onChange} checked={feeling.value === 'frugal'} /> Frugal
           <input type="radio" name='feeling' value='lazy' onChange={feeling.onChange} checked={feeling.value === 'lazy'} /> Lazy
+          <input type="radio" name='feeling' value='playful' onChange={feeling.onChange} checked={feeling.value === 'playful'} /> Playful
           <input type="radio" name='feeling' value='ratchet' onChange={feeling.onChange} checked={feeling.value === 'ratchet'} /> Ratchet
+          <input type="radio" name='feeling' value='spontaneous' onChange={feeling.onChange} checked={feeling.value === 'spontaneous'} /> Spontaneous
           <button type="submit">Submit</button>
                  {feeling.touched ? feeling.error : ''}
         </div>
