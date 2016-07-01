@@ -2,13 +2,17 @@ import axios from 'axios';
 
 export const INPUT_SUBMITTED = 'INPUT_SUBMITTED';
 
-export function submitInput(input) {
-  console.log('HERE IS THE INPUT', input)
+export function submitInput(feeling, location) {
+  console.log('HERE IS THE INPUT', feeling, location)
 
-  const request = axios.post('/yelp', input);
+  const request = axios.post('/yelp', {
+    feeling,
+    location
+  });
 
   return {
     type: INPUT_SUBMITTED,
     payload: request
   }
 };
+
