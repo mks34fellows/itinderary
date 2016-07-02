@@ -12,6 +12,7 @@ class UserInput extends Component {
 
   componentWillMount() {
     if (navigator.geolocation) {
+
       navigator.geolocation.getCurrentPosition( (position) => {
         this.setState({latLong: position});
         if(this.state.isClicked && this.state.props) {
@@ -50,7 +51,7 @@ class UserInput extends Component {
           <input type="radio" name='feeling' value='ratchet' onChange={feeling.onChange} checked={feeling.value === 'ratchet'} /> Ratchet
           <input type="radio" name='feeling' value='spontaneous' onChange={feeling.onChange} checked={feeling.value === 'spontaneous'} /> Spontaneous
           <button type="submit">Submit</button>
-                 {feeling.touched ? feeling.error : ''}
+            {feeling.touched ? feeling.error : ''}
         </div>
       </form>
     );
