@@ -13,7 +13,7 @@ module.exports = {
   externals: {
     'cheerio': 'window',
     'react/lib/ExecutionEnvironment': true,
-    'react/lib/ReactContext': true,
+    'react/lib/ReactContext': true
   },
   module: {
     preLoaders: [{
@@ -21,10 +21,12 @@ module.exports = {
       exclude: /node_modules/,
       loader: 'eslint-loader'
     }],
-    loaders: [{
-      exclude: /node_modules/,
-      loader: 'babel'
-    }]
+    loaders: [
+      {
+        exclude: /node_modules/,
+        loader: 'babel'
+      }
+    ]
   },
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
