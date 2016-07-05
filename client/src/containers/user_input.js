@@ -12,11 +12,10 @@ class UserInput extends Component {
 
   componentWillMount() {
     if (navigator.geolocation) {
-
-      navigator.geolocation.getCurrentPosition( (position) => {
+      navigator.geolocation.getCurrentPosition((position) => {
         this.setState({latLong: position});
         if(this.state.isClicked && this.state.props) {
-          this.props.submitInput(this.state.props, this.state.latLong);
+          this.props.submitInput(this.state.props.feeling, this.state.latLong);
           this.context.router.push('/options');
         }
       });
@@ -29,8 +28,9 @@ class UserInput extends Component {
 
   onSubmit(props) {
     this.setState({ isClicked: true, props: props });
+    
     if(this.state.latLong !== '') {
-      this.props.submitInput(this.state.props, this.state.latLong);
+      this.props.submitInput(props.feeling, this.state.latLong);
       this.context.router.push('/options');
     }
   }
