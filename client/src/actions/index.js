@@ -35,7 +35,7 @@ export function submitInput(feeling, location) {
   var searchTerm = getTerm(feeling);
 
   const request = axios.post('/yelp', {
-    feeling: feeling,
+    searchTerm: searchTerm,
     latitude: location.coords.latitude,
     longitude: location.coords.longitude
   });
