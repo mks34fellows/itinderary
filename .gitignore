@@ -1,4 +1,4 @@
 node_modules
 .DS_Store
-client/dist/*
+client/dist/bundle.js
 server/api/*

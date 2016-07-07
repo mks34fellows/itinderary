@@ -4,21 +4,16 @@ const reverseLoc = require('./api/google');
 
 module.exports = function (app) {
   app.post('/yelp', (req, res) => {
-    // console.log('this is the req.body', req.body);
-
     const term = req.body.searchTerm;
-    var location
 
     reverseLoc(req.body.latitude, req.body.longitude).then((data) => {
-      location = data.data.results[1];
-      console.log('THIS SHOULD BE SAN FRANCISCO', location)
+      const location = data.data.results[0].formatted_address;
+
+      yelpSearch(location, term).then((data) => {
+        res.send(data);
+      })
       
     });
-
-
-    yelpSearch('San Francisco', term).then((data) => {
-      res.send(data);
-    })
   });
 
   app.get('*', (req, res) => {

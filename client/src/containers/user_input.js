@@ -40,19 +40,67 @@ class UserInput extends Component {
 
     return(
       <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
-        <div>
-          <input type="radio" name='feeling' value='adventurous' onChange={feeling.onChange} checked={feeling.value === 'adventurous'} /> Adventurous
-          <input type="radio" name='feeling' value='classy'  onChange={feeling.onChange} checked={feeling.value === 'classy'} /> Classy
-          <input type="radio" name='feeling' value='competitive' onChange={feeling.onChange} checked={feeling.value === 'competitive'} /> Competitive
-          <input type="radio" name='feeling' value='creative' onChange={feeling.onChange} checked={feeling.value === 'creative'}/> Creative
-          <input type="radio" name='feeling' value='frugal' onChange={feeling.onChange} checked={feeling.value === 'frugal'} /> Frugal
-          <input type="radio" name='feeling' value='lazy' onChange={feeling.onChange} checked={feeling.value === 'lazy'} /> Lazy
-          <input type="radio" name='feeling' value='playful' onChange={feeling.onChange} checked={feeling.value === 'playful'} /> Playful
-          <input type="radio" name='feeling' value='ratchet' onChange={feeling.onChange} checked={feeling.value === 'ratchet'} /> Ratchet
-          <input type="radio" name='feeling' value='spontaneous' onChange={feeling.onChange} checked={feeling.value === 'spontaneous'} /> Spontaneous
-          <button type="submit">Submit</button>
-            {feeling.touched ? feeling.error : ''}
+        <div className="container">
+          <ul>
+            <li>
+              <input id="adventurous" type="radio" name='feeling' value='adventurous' onChange={feeling.onChange} checked={feeling.value === 'adventurous'} /> 
+              <label htmlFor="adventurous">Adventurous</label>
+              <div className="check"></div>
+            </li>
+
+            <li>
+              <input id="classy" type="radio" name='feeling' value='classy'  onChange={feeling.onChange} checked={feeling.value === 'classy'} /> 
+              <label htmlFor="classy">Classy</label>
+              <div className="check"></div>
+            </li>
+
+            <li>
+              <input id="competitive" type="radio" name='feeling' value='competitive' onChange={feeling.onChange} checked={feeling.value === 'competitive'} />
+              <label htmlFor="competitive">Competitive</label>
+              <div className="check"></div>
+            </li>
+
+            <li>
+              <input id="creative" type="radio" name='feeling' value='creative' onChange={feeling.onChange} checked={feeling.value === 'creative'}/> 
+              <label htmlFor="creative">Creative</label>
+              <div className="check"></div>
+            </li>
+
+            <li>
+              <input id="frugal" type="radio" name='feeling' value='frugal' onChange={feeling.onChange} checked={feeling.value === 'frugal'} />
+              <label htmlFor="frugal">Frugal</label>
+              <div className="check"></div>
+            </li>
+
+            <li>
+              <input id="lazy" type="radio" name='feeling' value='lazy' onChange={feeling.onChange} checked={feeling.value === 'lazy'} />
+              <label htmlFor="lazy">Lazy</label>
+              <div className="check"></div>
+            </li>
+
+            <li>
+              <input id="playful" type="radio" name='feeling' value='playful' onChange={feeling.onChange} checked={feeling.value === 'playful'} />
+              <label htmlFor="playful">Playful</label>
+              <div className="check"></div>
+            </li>
+
+            <li>
+              <input id="ratchet" type="radio" name='feeling' value='ratchet' onChange={feeling.onChange} checked={feeling.value === 'ratchet'} />
+              <label htmlFor="ratchet">Ratchet</label>
+              <div className="check"></div>
+            </li>
+
+            <li>
+              <input id="spontaneous" type="radio" name='feeling' value='spontaneous' onChange={feeling.onChange} checked={feeling.value === 'spontaneous'} />
+              <label htmlFor="spontaneous">Spontaneous</label>
+              <div className="check"></div>
+            </li>
+
+          </ul>
+            <button className="buttonContainer" id="button" type="submit">SUBMIT</button>
+              {feeling.touched ? feeling.error : ''}
         </div>
+
       </form>
     );
   }
