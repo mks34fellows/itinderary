@@ -2,21 +2,27 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 class Options extends Component {
+
+  renderOption(option) {
+    return(
+      <li className='noBullets' key={option.phone}>
+        <div>{option.name}</div>
+      </li>
+    )
+  }
+
   render() {
 
-    console.log('this is what my server gives me back', this.props.options);
+    console.log('this is what my server gives me back', this.props.options.businesses);
     
     if(Object.keys(this.props.options).length === 0){
       return <div>Fetching options...</div>
     }
 
     return (
-      <div>
-        <div>{this.props.options.location}</div>
-        <div>{this.props.options.budget}</div>
-        <div>{this.props.options.startTime}</div>
-        <div>{this.props.options.endTime}</div>
-      </div>
+      <ul>
+        <div>{this.props.options.businesses.map(this.renderOption)}</div>
+      </ul>
     )
   }
 }
