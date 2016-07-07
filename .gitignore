@@ -1,4 +1,5 @@
 node_modules
 .DS_Store
 client/dist/bundle.js
-server/api/*
+server/api/yelp.js
+server/api/google.js
