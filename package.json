@@ -57,6 +57,7 @@
     "redux-promise": "^0.5.3",
     "superagent": "^2.0.0",
     "superagent-promise-plugin": "^3.2.0",
+    "url-loader": "^0.5.7",
     "yelp": "^1.0.1"
   }
 }

@@ -16,7 +16,7 @@ class Options extends Component {
     console.log('this is what my server gives me back', this.props.options.businesses);
     
     if(Object.keys(this.props.options).length === 0){
-      return <div>Fetching options...</div>
+      return <div> Fetching Options </div>
     }
 
     return (

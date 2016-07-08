@@ -105,15 +105,6 @@ input[type=radio]:checked ~ label{
   font-family: 'Roboto', sans-serif;
 }
 
-/*.buttonContainer {
-  position: absolute;
-  left: 50%;
-  margin-left: -65px;
-  margin-top: -20px;
-  width: 130px;
-  height: 40px;
-  text-align: center;
-}*/
 
 button {
   outline: none;
@@ -146,5 +137,10 @@ h1 {
   color: #AAAAAA;
   text-align: center;
   position: relative;
+}
+
+.feeling {
+  color: red;
+  margin-left: 70px;
 }
 
