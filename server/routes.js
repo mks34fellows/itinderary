@@ -12,7 +12,6 @@ module.exports = function (app) {
       yelpSearch(location, term).then((data) => {
         res.send(data);
       })
-      
     });
   });
 
