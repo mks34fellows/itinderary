@@ -25,6 +25,10 @@ module.exports = {
       {
         exclude: /node_modules/,
         loader: 'babel'
+      },
+      {
+        test: /\.(png|jpg|jpeg|gif)$/,
+        loader: 'url-loader?limit=8192'
       }
     ]
   },

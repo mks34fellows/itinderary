@@ -41,6 +41,7 @@ class UserInput extends Component {
     return(
       <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
         <div className="container">
+          <h2 className='feeling'> Feeling... </h2>
           <ul>
             <li>
               <input id="adventurous" type="radio" name='feeling' value='adventurous' onChange={feeling.onChange} checked={feeling.value === 'adventurous'} /> 
