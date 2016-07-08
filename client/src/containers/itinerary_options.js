@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Accordion, AccordionItem } from 'react-sanfona';
 
 class Options extends Component {
 
   renderOption(option) {
     return(
-      <li className='noBullets' key={option.phone}>
-        <div>{option.name}</div>
-      </li>
+      <AccordionItem title={`${option.name}`} expanded>
+        <div> Address </div>
+        <div> Phone: {option.display_phone} </div>
+        <div> Rating: {option.rating} </div>
+        <img src={option.image_url} />
+      </AccordionItem>
     )
   }
 
@@ -20,9 +24,9 @@ class Options extends Component {
     }
 
     return (
-      <ul>
-        <div>{this.props.options.businesses.map(this.renderOption)}</div>
-      </ul>
+      <Accordion className='accordion'>
+        {this.props.options.businesses.map(this.renderOption)}
+      </Accordion>
     )
   }
 }

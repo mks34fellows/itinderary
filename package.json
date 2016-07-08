@@ -52,6 +52,7 @@
     "react-dom": "^0.14.3",
     "react-redux": "^4.0.0",
     "react-router": "^2.4.1",
+    "react-sanfona": "0.0.13",
     "redux": "^3.5.2",
     "redux-form": "^5.2.5",
     "redux-promise": "^0.5.3",
