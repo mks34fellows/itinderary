@@ -5,6 +5,7 @@ export default class App extends Component {
     return (
       <div>
       <h1>Itinderary</h1>
+      <h2>Feeling...</h2>
         {this.props.children}
       </div>
     )
