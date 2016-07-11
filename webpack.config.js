@@ -42,8 +42,10 @@ module.exports = {
   },
   reload: true,
   devServer: {
-    hot: true,
     historyApiFallback: true,
+    inline: true,
+    hot: true,
+    progress: true,
     contentBase: './'
   }
 };
