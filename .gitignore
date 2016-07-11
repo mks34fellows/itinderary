@@ -3,3 +3,4 @@ node_modules
 client/dist/bundle.js
 server/api/yelp.js
 server/api/google.js
+.env

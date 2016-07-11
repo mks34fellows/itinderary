@@ -7,7 +7,7 @@ const compiler = webpack(webpackConfig);
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 
-// require('dotenv').config({silent: true});
+require('dotenv').config({silent: true});
 
 module.exports = function (app, express) {
   app.use(webpackDevMiddleware(compiler, {
