@@ -3,7 +3,7 @@ import { mount, shallow } from 'enzyme';
 import {expect} from 'chai';
 // import md5 from 'md5';
 
-import User_Input from '../client/src/containers/user_input.js';
+import User_Input from '../../client/src/containers/user_input.js';
 
 describe('<User_Input>', function() {
   it('should have an h2 element for the name of the application', function() {
