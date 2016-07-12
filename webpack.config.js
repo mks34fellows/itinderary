@@ -40,12 +40,5 @@ module.exports = {
   resolve: {
     extensions: ['', '.js', '.jsx']
   },
-  reload: true,
-  devServer: {
-    historyApiFallback: true,
-    inline: true,
-    hot: true,
-    progress: true,
-    contentBase: './'
-  }
+  reload: true
 };
