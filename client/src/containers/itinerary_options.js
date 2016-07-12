@@ -6,7 +6,7 @@ class Options extends Component {
 
   renderOption(option) {
     return(
-      <AccordionItem title={`${option.name}`} expanded>
+      <AccordionItem title={`${option.name}`} expanded key={option.id}>
         <div> Address </div>
         <div> Phone: {option.display_phone} </div>
         <div> Rating: {option.rating} </div>

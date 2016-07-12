@@ -1,4 +1,11 @@
 {
-  "presets": ["airbnb","react", "es2015", "stage-0", "stage-1", "react-hmre"]
-
+  "presets": ["airbnb", "react", "es2015", "stage-0", "stage-1"],
+  "env": {
+    "development": {
+      "presets": ["react-hmre"]
+    },
+    "testing": {
+      "presets": []
+    }
+  }
 }
