@@ -1,13 +1,18 @@
-// import React from 'react';
-// import { mount, shallow } from 'enzyme';
-// import {expect} from 'chai';
+import React from 'react';
+import { mount, shallow, render } from 'enzyme';
+import { expect } from 'chai';
 
+import UserInput from '../../client/src/containers/user_input.js';
 
-// import User_Input from '../../client/src/containers/user_input.js';
+describe('<UserInput>', () => {
+  it('should have a form element', () => {
+    const wrapper = shallow(<UserInput />);
+    expect(wrapper.find('form')).to.have.length(0);
+  });
 
-// describe('<User_Input>', function() {
-//   it('should have an h2 element for the name of the application', function() {
-//     const wrapper = shallow(<User_Input />);
-//     expect(wrapper.find('form')).to.have.length(0);
-//   });
-// });
+  it('should render nine labels', () => {
+    const wrapper = shallow(<UserInput />);
+
+    expect(wrapper.find('.feeling')).to.have.length(1);
+  });
+});
