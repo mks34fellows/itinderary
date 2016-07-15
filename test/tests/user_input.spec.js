@@ -2,17 +2,38 @@ import React from 'react';
 import { mount, shallow, render } from 'enzyme';
 import { expect } from 'chai';
 
-import UserInput from '../../client/src/containers/user_input.js';
+import ConnectedUserInput, { UserInput } from '../../client/src/containers/user_input.js';
 
-describe('<UserInput>', () => {
-  it('should have a form element', () => {
-    const wrapper = shallow(<UserInput />);
-    expect(wrapper.find('form')).to.have.length(0);
+describe('<UserInput />', () => {
+
+  const buildForm = () => {
+    const props = {
+      fields: {
+        feeling: ''
+      },
+      handleSubmit: fn => fn
+    }
+    return shallow(<UserInput {...props}/>);
+  }
+
+  it('should be a form element', () => {
+
+    expect(buildForm().type()).to.equal('form');
   });
 
-  it('should render nine labels', () => {
-    const wrapper = shallow(<UserInput />);
+  it('should have a button with class buttonContainer', () => {
 
-    expect(wrapper.find('.feeling')).to.have.length(1);
+    expect(buildForm().find('button')).to.have.className('buttonContainer');
   });
+
+  it('should have a submit button', () => {
+
+    expect(buildForm().find('button')).to.have.length(1);
+  });
+
+  it('should have nine inputs', () => {
+
+    expect(buildForm().find('input')).to.have.length(9);
+  });
+
 });
