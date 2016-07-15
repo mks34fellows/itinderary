@@ -3,7 +3,7 @@ import { reduxForm } from 'redux-form';
 import { submitInput } from '../actions/index';
 import axios from 'axios';
 
-class UserInput extends Component {
+export class UserInput extends Component {
   constructor(props) {
     super(props);
     this.state = { latLong: '', isClicked: false, props: null };
