@@ -36,4 +36,15 @@ describe('<UserInput />', () => {
     expect(buildForm().find('input')).to.have.length(9);
   });
 
+  it('ConnectedUserInput', with connect', () => {
+    const mockStore = configureStore([]);
+    const store = mockStore({});
+    const wrapper = mount(<Provider store={store}>
+        <InnerConnectConnected />
+    </Provider>);
+    expect(wrapper.find('h2').length).toBe(1);
+    expect(wrapper.find('h2').text())
+        .toBe('Inner.dispatch defined');
+});
+
 });
