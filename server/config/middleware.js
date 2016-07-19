@@ -10,6 +10,7 @@ const webpackHotMiddleware = require('webpack-hot-middleware');
 require('dotenv').config({silent: true});
 
 module.exports = function (app, express) {
+  // Middleware for webpackDevServer
   app.use(webpackDevMiddleware(compiler, {
     quiet: true,
     noInfo: true,
@@ -19,6 +20,7 @@ module.exports = function (app, express) {
     }
   }));
 
+  // Middleware for HMR
   app.use(webpackHotMiddleware(compiler));
 
   app.use(bodyParser.json());

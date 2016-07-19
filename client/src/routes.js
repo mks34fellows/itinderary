@@ -4,7 +4,7 @@ import App from './components/app';
 import UserInput from './containers/user_input';
 import Options from './containers/itinerary_options';
 
-
+// Handles routes
 export default (
   <Route path="/" component={App}>
     <IndexRoute component={UserInput} />
