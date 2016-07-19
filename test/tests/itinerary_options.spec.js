@@ -1,6 +1,7 @@
 import React from 'react';
 import { mount, shallow, render } from 'enzyme';
 import {expect} from 'chai';
+import { Provider } from 'react-redux';
 import { Accordion, AccordionItem } from 'react-sanfona';
 import  ConnectedOptions, { Options }  from '../../client/src/containers/itinerary_options.js';
 
@@ -28,16 +29,10 @@ describe('<Options />', () => {
   it('should have 1 img element per AccordionItem', () => {
     expect(wrapper.find('AccordionItem > img').length).to.equal(1)
   });
-
-  it('ConnectedOptions, with connect', () => {
-    const mockStore = configureStore([]);
-    const store = mockStore({});
-    const wrapper = mount(<Provider store={store}>
-    <ConnectedOptions />
-    </Provider>);
-      expect(wrapper.find('h2').text())
-        .toBe('Inner.dispatch defined');
-  });
 })
+
+
+
+
 
 
