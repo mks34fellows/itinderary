@@ -19,6 +19,7 @@ ReactDOM.render(
   , document.querySelector('.appContainer')
 );
 
+// For HMR
 if(module.hot) {
   module.hot.accept('./routes.js', () => {
     const nextRoutes = require('./routes.js');

@@ -10,6 +10,8 @@ export class UserInput extends Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
 
+  // Gets geolocation before page loads. If input has been submitted before geolocation returns,
+  // this will call sumbitInput (action) with location as latLong & feeling as props
   componentWillMount() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {
@@ -26,6 +28,8 @@ export class UserInput extends Component {
     router: PropTypes.object
   };
 
+  // Submits input as action. If geolocation has not been set, this will only set component's
+  // state so that submitInput (action) will be called when geolocation returns
   onSubmit(props) {
     this.setState({ isClicked: true, props: props });
     
@@ -35,6 +39,7 @@ export class UserInput extends Component {
     }
   }
 
+  // Renders redux-form container with radio inputs for feelings
   render() {
     const { fields: {feeling}, handleSubmit, onChange } = this.props;
 

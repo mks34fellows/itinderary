@@ -14,6 +14,7 @@ const searchTerms = {
 
 
 export function submitInput(feeling, location) {
+  // Grabs a random searchTerm from searchTerms based on feeling parameter
   function getTerm(feeling){
     let maxIndex = searchTerms[feeling].length;
     let randIndex = Math.floor(Math.random() * maxIndex);
@@ -21,6 +22,7 @@ export function submitInput(feeling, location) {
     return searchTerms[feeling][randIndex];
   }
 
+  // Grabs a random feeling from searchTerms if feeling === 'spontaneous'
   function forSpontaneous() {
     let maxIndex = Object.keys(searchTerms).length;
     let randIndex = Math.floor(Math.random() * maxIndex);
@@ -28,12 +30,15 @@ export function submitInput(feeling, location) {
     return Object.keys(searchTerms)[randIndex];
   }
 
+  // Sets feeling to random feeling if feeling === 'spontaneous'
   if(feeling === 'spontaneous'){
     feeling = forSpontaneous();
   }
 
+  // Invoke getTerm to get a random activity
   var searchTerm = getTerm(feeling);
 
+  // Makes request to express server with appropriate search term and geolocation
   const request = axios.post('/yelp', {
     searchTerm: searchTerm,
     latitude: location.coords.latitude,

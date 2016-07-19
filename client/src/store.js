@@ -4,6 +4,8 @@ import promise from 'redux-promise';
 import reducer from './reducers/index';
 
 export default function configureStore(initialState) {
+  // Creates store for application state. Also applies promise middleware
+  // to resolve promises before action hits reducer
   const store = createStore(
     reducer,
     initialState,
@@ -14,6 +16,7 @@ export default function configureStore(initialState) {
     )
   );
 
+  // For HMR
   if(module.hot) {
     module.hot.accept(() => {
       const nextReducer = require('./reducers/index.js');

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Accordion, AccordionItem } from 'react-sanfona';
 
 export class Options extends Component {
-
+  // Maps options array as an AccordianItem to render on screen as Accordian
   renderOption(option) {
     return(
       <AccordionItem title={`${option.name}`} expanded key={option.id}>
@@ -16,9 +16,7 @@ export class Options extends Component {
   }
 
   render() {
-
-    // console.log('this is what my server gives me back', this.props.options.businesses);
-    
+    // Loading div when options aren't fetched yet    
     if(Object.keys(this.props.options).length === 0){
       return <div> Fetching Options </div>
     }
@@ -33,6 +31,7 @@ export class Options extends Component {
   }
 }
 
+// Connects yelp search results as props to this container
 function mapStateToProps(state){
   return {
     options: state.input

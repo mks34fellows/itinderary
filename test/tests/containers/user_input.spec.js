@@ -3,7 +3,7 @@ import { mount, shallow, render } from 'enzyme';
 import { expect } from 'chai';
 import sinon from 'sinon';
 
-import ConnectedUserInput, { UserInput } from '../../client/src/containers/user_input.js';
+import ConnectedUserInput, { UserInput } from '../../../client/src/containers/user_input.js';
 
 describe('<UserInput />', () => {
 
