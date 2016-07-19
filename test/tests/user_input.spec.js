@@ -23,7 +23,7 @@ describe('<UserInput />', () => {
 
   it('should have a button with class buttonContainer', () => {
 
-    expect(buildForm().find('button')).to.have.className('buttonContainer');
+    expect(buildForm().find('button').hasClass('buttonContainer')).to.equal(true);
   });
 
   it('should have a submit button', () => {
@@ -35,5 +35,4 @@ describe('<UserInput />', () => {
 
     expect(buildForm().find('input')).to.have.length(9);
   });
-
 });
