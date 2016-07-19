@@ -1,6 +1,7 @@
 import React from 'react';
 import { mount, shallow, render } from 'enzyme';
 import { expect } from 'chai';
+import sinon from 'sinon';
 
 import ConnectedUserInput, { UserInput } from '../../client/src/containers/user_input.js';
 
@@ -17,22 +18,22 @@ describe('<UserInput />', () => {
   }
 
   it('should be a form element', () => {
-
     expect(buildForm().type()).to.equal('form');
   });
 
-  it('should have a button with class buttonContainer', () => {
+  it('should have nine inputs', () => {
+    expect(buildForm().find('input')).to.have.length(9);
+  });
 
+  it('should have a button with class buttonContainer', () => {
     expect(buildForm().find('button').hasClass('buttonContainer')).to.equal(true);
   });
 
-  it('should have a submit button', () => {
+  it('calls componentWillMount', () => {
+    const spy = sinon.spy(UserInput.prototype, 'componentWillMount');
 
-    expect(buildForm().find('button')).to.have.length(1);
-  });
+    buildForm();
 
-  it('should have nine inputs', () => {
-
-    expect(buildForm().find('input')).to.have.length(9);
+    expect(spy.calledOnce).to.equal(true);
   });
 });
