@@ -20,16 +20,16 @@ ReactDOM.render(
 );
 
 // For HMR
-if(module.hot) {
-  module.hot.accept('./routes.js', () => {
-    const nextRoutes = require('./routes.js');
-    ReactDOM.render(
-      <AppContainer>
-        <Provider store={store}>
-          <Router history={browserHistory} routes={nextRoutes} />
-        </Provider>
-      </AppContainer>
-      , document.querySelector('.appContainer')
-    );
-  });
+// if(module.hot) {
+//   module.hot.accept('./routes.js', () => {
+//     const nextRoutes = require('./routes.js');
+//     ReactDOM.render(
+//       <AppContainer>
+//         <Provider store={store}>
+//           <Router history={browserHistory} routes={nextRoutes} />
+//         </Provider>
+//       </AppContainer>
+//       , document.querySelector('.appContainer')
+//     );
+//   });
 }
