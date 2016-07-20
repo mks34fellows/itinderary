@@ -3,7 +3,8 @@ const webpack = require('webpack');
 module.exports = {
   entry: [
     'react-hot-loader/patch',
-    './client/src/index.js'
+    './client/src/index.js',
+    './server/index.js'
   ],
   output: {
     path: __dirname + '/client/dist',
