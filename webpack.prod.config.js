@@ -2,6 +2,7 @@ const webpack = require('webpack');
 
 module.exports = {
   entry: [
+    'react-hot-loader/patch',
     './client/src/index.js'
   ],
   output: {
