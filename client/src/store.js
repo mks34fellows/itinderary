@@ -17,12 +17,12 @@ export default function configureStore(initialState) {
   );
 
   // For HMR
-  // if(module.hot) {
-  //   module.hot.accept(() => {
-  //     const nextReducer = require('./reducers/index.js');
-  //     store.replaceReducer(nextReducer);
-  //   });
-  // }
+  if(module.hot) {
+    module.hot.accept(() => {
+      const nextReducer = require('./reducers/index.js');
+      store.replaceReducer(nextReducer);
+    });
+  }
 
   return store;
 }
