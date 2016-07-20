@@ -31,5 +31,4 @@ module.exports = function (app, express) {
 
   app.use(express.static(path.join(__dirname, '../../client/dist')));
 
-  app.use(express.static(path.join(__dirname, '../../server')));
 };
