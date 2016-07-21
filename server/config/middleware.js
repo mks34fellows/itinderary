@@ -1,8 +1,7 @@
 const bodyParser = require('body-parser');
 const path = require('path');
 
-
-require('dotenv').config({silent: true});
+// require('dotenv').config({silent: true});
 
 module.exports = function (app, express) {
 
