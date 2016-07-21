@@ -1,5 +1,6 @@
 const bodyParser = require('body-parser');
 const path = require('path');
+const sslRedirect = require('heroku-ssl-redirect');
 
 // require('dotenv').config({silent: true});
 
@@ -27,6 +28,8 @@ module.exports = function (app, express) {
   }
 
   app.use(bodyParser.json());
+
+  app.use(sslRedirect());
 
   app.use(express.static(path.join(__dirname, '../../client/dist')));
 

@@ -17,11 +17,5 @@ module.exports = function (app) {
       })
     });
   });
-
-  app.get('*', (req, res) => {
-    if(req.headers['x-forwarded-proto']!='https'){
-      res.redirect('https://itinderary.herokuapp.com'+req.url)
-    }
-  
-  });    
+ 
 };
