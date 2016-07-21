@@ -1,7 +1,8 @@
 const express = require('express');
-const bodyParser = require ('body-parser');
-const app = express();
 const port = process.env.PORT || 8000;
+const app = express();
+
+require('dotenv').config({silent: true});
 
 require('./config/middleware')(app, express);
 require('./routes')(app);
