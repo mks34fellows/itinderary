@@ -55,7 +55,7 @@ export class UserInput extends Component {
             </li>
 
             <li>
-              <input id="classy" type="radio" name='feeling' value='classy'  onChange={feeling.onChange} checked={feeling.value === 'classy'} /> 
+              <input id="classy" type="radio" name='feeling' value='classy' onChange={feeling.onChange} checked={feeling.value === 'classy'} /> 
               <label htmlFor="classy">Classy</label>
               <div className="check"></div>
             </li>

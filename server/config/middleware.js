@@ -28,8 +28,10 @@ module.exports = function (app, express) {
   }
 
   app.use(bodyParser.json());
-
-  app.use(sslRedirect());
+  
+  if(process.env.NODE_ENV === 'production'){
+    app.use(sslRedirect());
+  };
 
   app.use(express.static(path.join(__dirname, '../../client/dist')));
 
