@@ -13,6 +13,7 @@ module.exports = function (app) {
 
       // Sends yelpSearch results to client
       yelpSearch(location, term).then((data) => {
+        
         res.send(data);
       })
     });
