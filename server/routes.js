@@ -14,26 +14,29 @@ module.exports = function (app) {
 
       // Sends yelpSearch results to client
       yelpSearch(location, term).then((data) => {
-        // data.businesses.forEach((business) => {
-        //   var name = business.name;
-        //   var phone = business.display_phone;
-        //   var rating = buisness.rating;
-        //   var image = buisness.image_url;
+        data.businesses.forEach((business) => {
+          var name = business.name;
+          var phone_number = business.display_phone;
+          var rating = business.rating;
+          var image = business.image_url;
+          var address = business.location.display_address.join(', ');
 
+          db_connection.query("SELECT * FROM Activities WHERE phone_number = ?", [phone_number], (err, rows) => {
+            if(err) throw err;
 
-        //   db_connection.query('SELECT * FROM Activites WHERE phone_number = ?', [phone], (err, rows) => {
-        //     if(err) throw err;
-        //     if(rows.length === 0){
-        //       db_connection.query('INSERT INTO Activites (name, phone_number, rating, image) VALUES (?)', [name, phone, rating, image], (err, info) => {
-        //         if(err) throw err;
-        //         console.log('this worked! WOOHOO!');
-        //       })
-        //     }
-        //   });
-        // })
+            if(rows.length === 0){
+              db_connection.query("INSERT INTO Activities SET ?", {name, address, phone_number, rating, image}, (err, info) => {
+                if(err) throw err;
+                console.log('Row inserted!');
+              })
+            }
+          });
+        })
         
         res.send(data);
       })
     });
   }); 
 };
+
+

@@ -16,6 +16,7 @@ export class Options extends Component {
   }
 
   render() {
+    console.log(this.props.options)
     // Loading div when options aren't fetched yet    
     if(Object.keys(this.props.options).length === 0){
       return <div> Fetching Options </div>

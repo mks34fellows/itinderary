@@ -1,6 +1,6 @@
 const mysql = require('mysql');
 
-// require('dotenv').config({silent: true});
+require('dotenv').config({silent: true});
 
 const connection = mysql.createConnection({
     host: process.env.MYSQL_HOST,
@@ -22,7 +22,7 @@ connection.query('CREATE TABLE IF NOT EXISTS Users (id INT(11) AUTO_INCREMENT PR
   console.log('Users Table Created');
 });
 
-connection.query('CREATE TABLE IF NOT EXISTS Activities (id INT(11) AUTO_INCREMENT PRIMARY KEY, name VARCHAR(30), address VARCHAR(100), phone_number VARCHAR(20), rating VARCHAR(5), image VARCHAR(100));', (err) => {
+connection.query('CREATE TABLE IF NOT EXISTS Activities (id INT(11) AUTO_INCREMENT PRIMARY KEY, name VARCHAR(100), address VARCHAR(100), phone_number VARCHAR(20), rating VARCHAR(5), image VARCHAR(100));', (err) => {
   if(err) throw err;
   console.log('Activities Table Created');
 });
