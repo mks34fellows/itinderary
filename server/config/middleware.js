@@ -2,8 +2,6 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const sslRedirect = require('heroku-ssl-redirect');
 
-// require('dotenv').config({silent: true});
-
 module.exports = function (app, express) {
 
   if(process.env.NODE_ENV !== 'production'){  

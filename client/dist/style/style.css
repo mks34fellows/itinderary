@@ -1,5 +1,5 @@
 body {
-  background: #191919;
+  background: #3B3B3B;
 }
 
 .noBullets {
@@ -20,7 +20,6 @@ body {
 .container ul {
   list-style: none;
   margin: 0;
-/*  padding: 0;*/
 }
 
 ul li {
@@ -88,21 +87,20 @@ ul li .check::before {
 }
 
 input[type=radio]:checked ~ .check {
-  border: 5px solid #E41B17;
+  border: 5px solid #2BACB5;
 }
 
 input[type=radio]:checked ~ .check::before{
-  background: #E41B17;
+  background: #2BACB5;
 }
 
 input[type=radio]:checked ~ label{
-  color: #E41B17;
+  color: #2BACB5;
 }
 
 * {
   font-family: 'Roboto', sans-serif;
 }
-
 
 button {
   outline: none;
@@ -110,9 +108,9 @@ button {
   text-align: center;
   width: 130px;
   border-radius: 40px;
-  background: #191919;
-  border: 2px solid #1ECD97;
-  color: #1ECD97;
+  background: #3B3B3B;
+  border: 2px solid #2BACB5;
+  color: #2BACB5;
   letter-spacing: 1px;
   text-shadow: 0;
   font-size: 14px;
@@ -124,24 +122,33 @@ button {
   display: block;
 }
 button:hover {
-  color: #191919;
-  background: #1ECD97;
+  color: #3B3B3B;
+  background: #2BACB5;
 }
 button:active {
   letter-spacing: 2px;
 }
 
 h1 {
-  color: #AAAAAA;
+  color: #2BACB5;
   text-align: center;
   position: relative;
 }
 
 .feeling {
-  color: red;
+  color: #E84D5B;
   margin-left: 70px;
 }
 
 .accordion {
-  color: #AAAAAA;
+  width: 60%;
+  margin: auto;
+  background-color: #F5ECD9;
+  border-radius: 5px;
+}
+
+.accordionItem {
+  display: block;
+  border-bottom: 3px solid #2BACB5;
+  padding: 100px;
 }
