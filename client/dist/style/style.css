@@ -1,5 +1,7 @@
 body {
-  background: #3B3B3B;
+  background: url('http://www.yourworldwithcreflo.com/wp-content/uploads/2015/01/bigstock-Group-Of-Friends-Having-Fun-To-58863764.jpg') no-repeat center center fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .noBullets {
@@ -10,11 +12,13 @@ body {
   display: block;
   position: absolute;
   margin: auto;
-  height: 450px auto;
+  height: 675px;
   width: 400px;
   bottom: 0; left: 0; right: 0; top: 0;
   padding: 0;
   top: 100px;
+  background-color: white;
+  opacity: 0.7;
 }
 
 .container ul {
@@ -22,13 +26,14 @@ body {
   margin: 0;
 }
 
+
 ul li {
   color: #AAAAAA;
   display: block;
   position: relative;
   float: left;
   width: 100%;
-  height: 75px;
+  height: 60px;
   border-botom: 1px solid #111111;
 }
 
@@ -108,7 +113,7 @@ button {
   text-align: center;
   width: 130px;
   border-radius: 40px;
-  background: #3B3B3B;
+  background: white;
   border: 2px solid #2BACB5;
   color: #2BACB5;
   letter-spacing: 1px;
@@ -118,11 +123,12 @@ button {
   cursor: pointer;
   -webkit-transition: all 0.25s ease;
   transition: all 0.25s ease;
-  margin: 56px;
-  display: block;
+  margin: 20px 100px 100px 100px;
+  display: inline;
+
 }
 button:hover {
-  color: #3B3B3B;
+  color: white;
   background: #2BACB5;
 }
 button:active {
@@ -130,13 +136,13 @@ button:active {
 }
 
 h1 {
-  color: #2BACB5;
+  color: #EC4863;
   text-align: center;
   position: relative;
 }
 
 .feeling {
-  color: #E84D5B;
+  color: #EC4863;
   margin-left: 70px;
 }
 
@@ -150,5 +156,5 @@ h1 {
 .accordionItem {
   display: block;
   border-bottom: 3px solid #2BACB5;
-  padding: 100px;
+  padding: 15px;
 }

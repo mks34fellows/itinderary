@@ -44,7 +44,7 @@ export class UserInput extends Component {
     const { fields: {feeling}, handleSubmit, onChange } = this.props;
 
     return(
-      <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+      <form className='reduxForm' onSubmit={handleSubmit(this.onSubmit.bind(this))}>
         <div className="container">
           <h2 className='feeling'> Feeling... </h2>
           <ul>
@@ -103,7 +103,7 @@ export class UserInput extends Component {
             </li>
 
           </ul>
-            <button className="buttonContainer" id="button" type="submit">SUBMIT</button>
+            <button id="button" type="submit">SUBMIT</button>
               {feeling.touched ? feeling.error : ''}
         </div>
 
