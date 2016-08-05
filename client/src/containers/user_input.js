@@ -46,7 +46,8 @@ export class UserInput extends Component {
     return(
       <form className='reduxForm' onSubmit={handleSubmit(this.onSubmit.bind(this))}>
         <div className="container">
-          <h2 className='feeling'> Feeling... </h2>
+          <h1> Itinderary </h1>
+          <h2 className='feeling'> How are you feeling? </h2>
           <ul>
             <li>
               <input id="adventurous" type="radio" name='feeling' value='adventurous' onChange={feeling.onChange} checked={feeling.value === 'adventurous'} /> 
