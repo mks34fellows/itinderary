@@ -108,6 +108,11 @@ input[type=radio]:checked ~ label{
   font-family: 'Roboto', sans-serif;
 }
 
+.backButton {
+  opacity: 0.8;
+  margin-left: 19%;
+}
+
 button {
   outline: none;
   height: 40px;

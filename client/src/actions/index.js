@@ -1,5 +1,6 @@
 import axios from 'axios';
 export const INPUT_SUBMITTED = 'INPUT_SUBMITTED';
+export const BACK_CLICKED = 'BACK_CLICKED';
 
 const searchTerms = {
   adventurous: ['hiking', 'beach', 'playground', 'amusement park'],
@@ -11,7 +12,6 @@ const searchTerms = {
   playful: ['arcade', 'trampoline park', 'playground'],
   ratchet: ['bar', 'clubs', 'hookah bar']
 }
-
 
 export function submitInput(feeling, location) {
   // Grabs a random searchTerm from searchTerms based on feeling parameter
@@ -50,3 +50,10 @@ export function submitInput(feeling, location) {
     payload: request
   }
 };
+
+export function backClicked() {
+  return {
+    type: BACK_CLICKED,
+    payload: {}
+  }
+}
