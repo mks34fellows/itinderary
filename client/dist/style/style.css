@@ -172,3 +172,8 @@ h1 {
   border-bottom: 3px solid #2BACB5;
   padding: 15px;
 }
+
+.loading {
+  display: block;
+  margin: 0 auto;
+}

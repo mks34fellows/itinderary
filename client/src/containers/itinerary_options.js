@@ -29,7 +29,7 @@ export class Options extends Component {
   render() {
     // Loading div when options aren't fetched yet    
     if(Object.keys(this.props.options).length === 0){
-      return <div> Fetching Options </div>
+      return <img className='loading' src="http://closera.com/skin/frontend/bizarre/skin2_new/images/Loading1.gif" width="500" height="500"/>
     }
 
     return (
