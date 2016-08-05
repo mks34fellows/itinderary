@@ -30,13 +30,12 @@ body {
 
 
 ul li {
-  color: #AAAAAA;
+  color: #454545;
   display: block;
   position: relative;
   float: left;
   width: 100%;
   height: 50px;
-  border-botom: 1px solid #111111;
 }
 
 ul li input[type=radio] {
@@ -64,7 +63,7 @@ ul li:hover label {
 ul li .check{
   display: block;
   position: absolute;
-  border: 5px solid #AAAAAA;
+  border: 5px solid #454545;
   border-radius: 100%;
   height: 25px;
   width: 25px;
@@ -158,8 +157,9 @@ h1 {
 .accordion {
   width: 60%;
   margin: auto;
-  background-color: #F5ECD9;
+  background-color: white;
   border-radius: 5px;
+  opacity: 0.8
 }
 
 .accordionItem {
