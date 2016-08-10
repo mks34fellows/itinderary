@@ -14,11 +14,12 @@ export class Options extends Component {
     let phone = option.display_phone.slice(3).split("");
     phone.splice(0,0,'(');
     phone.splice(4,0,')');
+    console.log(phone.join(''))
     return(
       <AccordionItem className='accordionItem' title={`> ${option.name}`} expanded key={option.id}>
-        <div> Address: {option.location.display_address.join(', ')} </div>
-        <div> Phone: {phone.join('')} </div>
-        <div> Rating: {option.rating} </div>
+        <div className='listColor'> Address: {option.location.display_address.join(', ')} </div>
+        <div className='listColor'> Phone: {phone} </div>
+        <div className='listColor'> Rating: {option.rating} </div>
         <img src={option.image_url} />
       </AccordionItem>
     )

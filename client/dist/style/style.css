@@ -163,6 +163,7 @@ h1 {
 
 .accordionItem {
   display: block;
+  color: #454545;
   border-bottom: 3px solid #2BACB5;
   padding: 15px;
 }
@@ -174,6 +175,6 @@ h1 {
   transform: translate(-50%, -50%);
 }
 
-.title {
-
+.listColor {
+  color: #454545;
 }
