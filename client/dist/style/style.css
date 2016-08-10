@@ -141,12 +141,6 @@ button:active {
   letter-spacing: 2px;
 }
 
-/*h2 {
-  color: #EC4863;
-  text-align: center;
-  position: relative;
-}*/
-
 h1 {
   color: #2BACB5;
   text-align: center;
@@ -164,7 +158,7 @@ h1 {
   margin: auto;
   background-color: white;
   border-radius: 5px;
-  opacity: 0.8
+  opacity: 0.8;
 }
 
 .accordionItem {
@@ -174,6 +168,12 @@ h1 {
 }
 
 .loading {
-  display: block;
-  margin: 0 auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.title {
+
 }

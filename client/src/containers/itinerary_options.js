@@ -11,10 +11,13 @@ export class Options extends Component {
 
   // Maps options array as an AccordianItem to render on screen as Accordian
   renderOption(option) {
+    let phone = option.display_phone.slice(3).split("");
+    phone.splice(0,0,'(');
+    phone.splice(4,0,')');
     return(
       <AccordionItem className='accordionItem' title={`> ${option.name}`} expanded key={option.id}>
         <div> Address: {option.location.display_address.join(', ')} </div>
-        <div> Phone: {option.display_phone} </div>
+        <div> Phone: {phone.join('')} </div>
         <div> Rating: {option.rating} </div>
         <img src={option.image_url} />
       </AccordionItem>
@@ -27,13 +30,15 @@ export class Options extends Component {
   }
 
   render() {
-    // Loading div when options aren't fetched yet    
     if(Object.keys(this.props.options).length === 0){
       return <img className='loading' src="http://closera.com/skin/frontend/bizarre/skin2_new/images/Loading1.gif" width="500" height="500"/>
     }
 
     return (
       <div>
+        <div>
+          <h1 className='title'> Itinderary </h1>
+        </div>
         <Accordion className='accordion'>
           {this.props.options.businesses.map(this.renderOption)}
         </Accordion>
