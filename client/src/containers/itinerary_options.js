@@ -15,7 +15,7 @@ export class Options extends Component {
     return (
       <AccordionItem className='accordionItem' title={`> ${option.name}`} expanded key={option.id}>
         <div className='listColor'> Address: {option.location.display_address.join(', ')} </div>
-        <div className='listColor'> Phone: {option.display_phone ? option.display_phone.slice(3) : '' } </div>
+        <div className='listColor'> Phone: { option.display_phone ? `(${ option.display_phone.slice(3,6) })${ option.display_phone.slice(6) }` : '' } </div>
         <div className='listColor'> Rating: {option.rating} </div>
         <img src={option.image_url} />
       </AccordionItem>
