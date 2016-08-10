@@ -11,14 +11,11 @@ export class Options extends Component {
 
   // Maps options array as an AccordianItem to render on screen as Accordian
   renderOption(option) {
-    let phone = option.display_phone.slice(3).split("");
-    phone.splice(0,0,'(');
-    phone.splice(4,0,')');
-    console.log(phone.join(''))
-    return(
+
+    return (
       <AccordionItem className='accordionItem' title={`> ${option.name}`} expanded key={option.id}>
         <div className='listColor'> Address: {option.location.display_address.join(', ')} </div>
-        <div className='listColor'> Phone: {phone} </div>
+        <div className='listColor'> Phone: {option.display_phone ? option.display_phone.slice(3) : '' } </div>
         <div className='listColor'> Rating: {option.rating} </div>
         <img src={option.image_url} />
       </AccordionItem>
